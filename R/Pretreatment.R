@@ -33,7 +33,7 @@ Pretreatment <- function(IATdata,
   # Keep only critical blocks
   IAT1 <- subset(IAT1, (IAT1[,label_block]%in%c(block_pair1, block_pair2)))
   
-  #Convert block names to simpler labels
+  # Convert block names to simpler labels
   IAT2 <- data.frame(matrix(ncol=0, nrow=nrow(IAT1)))
   IAT2$subject <- IAT1[,label_subject]
   IAT2$latency <- IAT1[,label_latency]
