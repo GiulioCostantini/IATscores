@@ -1,0 +1,11 @@
+Package: IATscores
+Type: Package
+Title: Compute robust IAT scores
+Version: 0.1
+Date: 2014-07-31
+Author: Giulio Costantini
+Maintainer: Giulio Costantini <giulio.costantini@unimib.it>
+Depends: R (>= 3.1.1), dplyr (>= 0.2), reshape2 (>= 1.4), stringr (>= 0.6.2)
+Description: Compute robust IAT scores
+License: GPL>=2
+LazyData: yes
