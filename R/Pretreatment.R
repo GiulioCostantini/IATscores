@@ -8,10 +8,10 @@ Pretreatment <- function(IATdata,
                          label_trial = NA,
                          trial_left = NA,
                          trial_right = NA,
-                         label_praccrit=NA,
-                         block_prac=NA,
-                         block_crit=NA,
-                         label_stimulus=NA)
+                         label_praccrit = NA,
+                         block_prac = NA,
+                         block_crit = NA,
+                         label_stimulus = NA)
 {
   # determine which optional columns are desired
   trials <- !any(is.na(c(label_trial, trial_left, trial_right)))
@@ -70,4 +70,5 @@ Pretreatment <- function(IATdata,
   # values that are not allowed are removed
   # e.g., (negative latencies, correct != 0 or 1)
   IAT2 <- IAT2 [IAT2$latency>=0 & IAT2$correct %in% c(0,1), ]
+  IAT2
 }

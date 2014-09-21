@@ -1,1 +1,1 @@
-exportPattern("^[[:alpha:]]+")
+export(alg2param, Pretreatment, RobustScores, SplitHalf)
