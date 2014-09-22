@@ -1,1 +1,1 @@
-export(alg2param, Pretreatment, RobustScores, SplitHalf)
+export(alg2param, Pretreatment, RobustScores, SplitHalf, TestRetest)
