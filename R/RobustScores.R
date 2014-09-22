@@ -9,8 +9,14 @@ RobustScores <- function(IATdata,
 {
   mincor <- 3 # minimum number of correct responses with lat < k10
   # required to be included int he analyses
-  k10 <- 10000 # maximum allowed latency. Careful, if change here,
-  # consider changing k10 also in function doP1P2
+  
+  # maximum allowed latency. Careful, if change here,
+  # consider changing the followint fixed parameters also in function doP1P2
+  k10 <- 10000
+  upfxtrim <- 10000
+  lofxtrim <- 400
+  k10 <- min(k10, upfxtrim)
+  
   
   # CHECK THE INPUT
   # column subject must be present and must be numeric
@@ -67,11 +73,12 @@ RobustScores <- function(IATdata,
   # define a useful univocal index by row
   IATdata$index <- 1:nrow(IATdata)
   
-  # Exclude participants with less than 3 correct valid latencies (< 10s)
-  # in each block
+  # Exclude participants with less than 3 correct valid latencies (< 10s and
+  # > 400ms), in each block
   ncor <- group_by(IATdata, subject, blockcode) %>%
     summarize(ncor = sum(!is.na(correct) & correct == TRUE &
-                        !is.na(latency) & latency < k10)) %>%
+                        !is.na(latency) & latency < k10 &
+                          latency >= lofxtrim)) %>%
     filter(ncor < mincor)
   
   if(nrow(ncor) != 0)

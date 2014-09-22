@@ -13,7 +13,7 @@ SplitHalf(IATdata, ...)
 \arguments{
   \item{IATdata}{
 same as \code{\link{RobustScores}}}
-\item{...}{other parameters to be passed to RobustScores}
+\item{\dots}{other parameters to be passed to RobustScores}
 
 }
 \details{

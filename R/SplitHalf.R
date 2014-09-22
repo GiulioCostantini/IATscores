@@ -20,7 +20,8 @@ SplitHalf <- function(IATdata, ...)
                            split2[,c("subject", algos[i])], by = "subject")
     
     # correlation
-    splitcor <- cor(select(splitdata, -subject))[1,2]
+    splitcor <- cor(select(splitdata, -subject),
+                    use = "pairwise.complete.obs")[1,2]
     
     # spearman-brown prophetic formula
     splithalf[i, "algorithm"] <- algos[i]

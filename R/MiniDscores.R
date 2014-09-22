@@ -33,7 +33,7 @@ MiniDscores <- function(IATlong, P3 = c("minid", "minid_t10",
   nIL2 <- group_by(IL2, subject, variable) %>% summarize(n2 = n())
   nIL <- left_join(nIL1, nIL2, by = c("subject", "variable"))
   nIL <- mutate(nIL, nIL3 = n1*n2)
-  rows <- sum(nIL$nIL3) # the number of rows of IL3
+  rows <- sum(nIL$nIL3, na.rm = TRUE) # the number of rows of IL3
   # estimated size of a single row of IL3
   arow <- (object.size(IL1) + object.size(IL1[,3]*2)) / nrow(IL1)
   rm(nIL1, nIL2, nIL)
