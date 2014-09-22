@@ -87,7 +87,8 @@ RobustScores <- function(IATdata,
     warning(paste("The following subjects have been removed because they
             have too few correct responses to compute IAT scores, i.e.,
             less than", mincor, "correct responses with latency less than",
-                  k10), immediate. = TRUE)
+                  k10, "ms"), immediate. = TRUE)
+    cat("Subjects =", unique(ncor$subject))
   }
   
   # COMPUTE THE ROBUST IAT SCORES
