@@ -5,6 +5,7 @@
 Convert the algorithm names to the generating parameters
 }
 \description{
+Starting from the algorithm names, gives the parameters that generated each algorithm as output.
 }
 \usage{
 alg2param(x)
@@ -25,20 +26,9 @@ A dataframe with four columns.
 \item{P3}{(string). Parameter P3, see \code{\link{RobustScores}}}
 \item{P4}{(string). Parameter P4, see \code{\link{RobustScores}}}
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
 \author{
 Giulio Costantini}
-\note{
-%%  ~~further notes~~
-}
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
 alg2param("p1231")
 }

@@ -5,7 +5,9 @@ Version: 0.1
 Date: 2014-07-31
 Author: Giulio Costantini
 Maintainer: Giulio Costantini <giulio.costantini@unimib.it>
-Depends: R (>= 3.1.1), dplyr (>= 0.2), reshape2 (>= 1.4), stringr (>= 0.6.2)
+Depends: R (>= 3.1.1)
+Imports: stringr (>= 0.6.2), dplyr (>= 0.2), reshape2 (>= 1.4), nem (>= 2.38.0), qgraph (>= 1.2.5)
+Suggests: nparcomp (>= 2.0)
 Description: Compute robust IAT scores
 License: GPL-2
 LazyData: yes

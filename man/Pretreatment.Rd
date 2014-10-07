@@ -49,42 +49,16 @@ Pretreatment(IATdata,
   \item{label_stimulus}{(optional) The variable name in \code{IATdata} that keeps information about the stimulus presented in each trial}
 }
 
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
-\value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
-}
-\references{
-%% ~put references to the literature/web site here ~
+\value{a dataframe with the following columns:
+
+\item{subject}{Univocally identifies a participant.}
+\item{correct}{(logical). has value TRUE or 1 if the trial was answered correctly, FALSE or 0 otherwise.}
+\item{latency}{(numeric). Response latency.}
+\item{blockcode}{(factor or string). Can assume only two values, \code{"pair1"} and \code{"pair2"}. \code{"pair1"} is for compatible block and \code{"pair2"} is for incompatible (or vice versa).}
+\item{praccrit}{(factor, optional). Can assume only two values, \code{"prac"} is for practice combined categorization block and \code{"crit"} is for critical combined categorization block. In a IAT with 60 trials for each double categorization block, the first 20 are sometimes administered as practice block, the other 40 as critical.}
+\item{trialcode}{(factor, optional). Code for the trial, has value \code{"left"} if the correct response required to press the left button, \code{"right"} if it required to press the right button.}
+\item{stimulus}{(character, optional). The stimulus item.}
 }
 \author{
 Giulio Costantini
 }
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
-\examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function (x) 
-{
-  }
-}
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
