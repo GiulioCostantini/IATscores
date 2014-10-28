@@ -1,7 +1,8 @@
 RobustScores <- function(IATdata,
                          P1 = c("none", "fxtrim", "fxwins", "trim10", "wins10",
                                 "inve10"),
-                         P2 = c("ignore", "exclude", "recode", "separate"),
+                         P2 = c("ignore", "exclude", "recode", "separate",
+                                "recode600"),
                          P3 = c("dscore", "gscore", "wpr90", "minid",
                                 "minid_t10", "minid_w10", "minid_i10"),
                          P4 = c("nodist", "dist"),
@@ -16,7 +17,6 @@ RobustScores <- function(IATdata,
   upfxtrim <- 10000
   lofxtrim <- 400
   k10 <- min(k10, upfxtrim)
-  
   
   # CHECK THE INPUT
   # column subject must be present and must be numeric
@@ -76,7 +76,7 @@ RobustScores <- function(IATdata,
   # Exclude participants with less than 3 correct valid latencies (< 10s and
   # > 400ms), in each block
   ncor <- group_by(IATdata, subject, blockcode) %>%
-    summarize(ncor = sum(!is.na(correct) & correct == TRUE &
+   summarize(ncor = sum(!is.na(correct) & correct == TRUE &
                         !is.na(latency) & latency < k10 &
                           latency >= lofxtrim)) %>%
     filter(ncor < mincor)

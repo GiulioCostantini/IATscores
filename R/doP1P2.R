@@ -208,5 +208,60 @@ doP1P2 <- function(IATdata,
       IATdata <- rbind_list(tmp1, tmp2) %>% arrange(index)
     }  
   }
+  
+  # P2 = 5. ERROR TREATMENT = RECODE with M+600
+  if("recode600" %in% P2)
+  {
+    ErrReplace <- filter(IATdata, correct == TRUE) %>% # only on correct resp.
+      group_by(subject, blockcode) %>% # for each subject and each block
+      summarize(ErrReplace = mean(pxxxx, na.rm = TRUE) + 600) # M+600
+    
+    IATdata <- left_join(IATdata, ErrReplace, by = c("subject", "blockcode"))
+    
+    if("none" %in% P1)
+    {
+      tmp1 <- filter(IATdata, correct == 1) %>% mutate(p15xx = pxxxx)
+      tmp2 <- filter(IATdata, correct == 0) %>% mutate(p15xx = ErrReplace)
+      IATdata <- rbind_list(tmp1, tmp2) %>% arrange(index)
+    }  
+    if("fxtrim" %in% P1)
+    {
+      tmp1 <- filter(IATdata, correct == 1) %>%
+        mutate(p25xx = fxtrim(pxxxx, lo = lofxtrim, up = upfxtrim))
+      tmp2 <- filter(IATdata, correct == 0) %>% mutate(p25xx = ErrReplace)
+      IATdata <- rbind_list(tmp1, tmp2) %>% arrange(index)
+    }  
+    if("fxwins" %in% P1)
+    {
+      tmp1 <- filter(IATdata, correct == 1) %>%
+        mutate(p35xx = fxwins(pxxxx, lo = lofxwins, up = upfxwins))
+      tmp2 <- filter(IATdata, correct == 0) %>% mutate(p35xx = ErrReplace)
+      IATdata <- rbind_list(tmp1, tmp2) %>% arrange(index)
+    }  
+    if("trim10" %in% P1)
+    {
+      tmp1 <- filter(IATdata, correct == 1) %>% group_by(subject) %>%
+        mutate(p45xx = trim_or_win(pxxxx, type = "trm", tr = tr))
+      tmp2 <- filter(IATdata, correct == 0) %>% mutate(p45xx = ErrReplace)
+      IATdata <- rbind_list(tmp1, tmp2) %>% arrange(index)
+    }  
+    
+    if("wins10" %in% P1)
+    {
+      tmp1 <- filter(IATdata, correct == 1) %>% group_by(subject) %>%
+        mutate(p55xx = trim_or_win(pxxxx, type = "wns", tr = tr))
+      tmp2 <- filter(IATdata, correct == 0) %>% mutate(p55xx = ErrReplace)
+      IATdata <- rbind_list(tmp1, tmp2) %>% arrange(index)
+    }  
+    if("inve10" %in% P1)
+    {
+      tmp1 <- filter(IATdata, correct == 1) %>% group_by(subject) %>%
+        mutate(p65xx = trim_or_win(pxxxx, type = "inv", tr = tr))
+      tmp2 <- filter(IATdata, correct == 0) %>% mutate(p65xx = ErrReplace)
+      IATdata <- rbind_list(tmp1, tmp2) %>% arrange(index)
+    }  
+    IATdata$ErrReplace <- NULL
+  }
+  
   IATdata
 }

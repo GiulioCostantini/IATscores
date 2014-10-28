@@ -10,7 +10,7 @@ This is the main function of the package. It allows to compute many variants of 
 \usage{
 RobustScores(IATdata,
 P1 = c("none", "fxtrim", "fxwins", "trim10", "wins10", "inve10"),
-P2 = c("ignore", "exclude", "recode", "separate"),
+P2 = c("ignore", "exclude", "recode", "separate", "recode600"),
 P3 = c("dscore", "gscore", "wpr90", "minid", "minid_t10", "minid_w10",
 "minid_i10"),
 P4 = c("nodist", "dist"), maxMemory = 1000,
@@ -24,7 +24,7 @@ a dataframe with the following columns:
     \item \code{subject}: (factor or coercible to factor). Univocally identifies a participant.
     \item \code{correct}: (logical). has value \code{TRUE} or \code{1} if the trial was answered correctly, \code{FALSE} or \code{0} otherwise.
     \item \code{latency}: (numeric). Response latency, in ms. 
-    \item \code{blockcode}: (factor or string). Can assume only two values, \code{"pair1"} and \code{"pair2"}. \code{"pair1"} is for compatible block and \code{"pair2"} is for incompatible (or vice versa).
+    \item \code{blockcode}: (factor or string). Can assume only two values, \code{"pair1"} and \code{"pair2"}. \code{"pair1"} is for one critical block and \code{"pair2"} is the other critical block.
     \item \code{praccrit}. (factor, optional). Can assume only two values, \code{"prac"} is for practice combined categorization block and \code{"crit"} is for critical combined categorization block. In a IAT with 60 trials for each double categorization block, the first 20 are sometimes administered as practice block, the other 40 as critical.
   }
 }
@@ -44,7 +44,8 @@ a dataframe with the following columns:
     \item \code{"exclude"}: Remove error latencies and consider only the correct ones.
     \item \code{"recode"}: Recode the error latencies with the M+2SD of correct latencies. In the computation of the M and of the SD, all correct latencies are considered that are < 10s.
     \item \code{"separate"}: Apply parameter P1 separately for correct and error latencies. Notice that for parameter 1 equal to "none", "fxtrim", and "fxwins", if P4 = "ignore" and P4 = "separate", the result is the same.)
-    }
+    \item \code{"recode600"}: Recode the error latencies with the the mean of correct latencies + 600ms. In the computation of the Mean, all correct latencies are considered that are < 10s.
+        }
 }
   \item{P3}{The algorithm for computing the Dscores. Can include one or more of the following strings.
   \enumerate{
@@ -84,6 +85,7 @@ The procedure for computing the scores is the following.
 \item{p1342}{The IAT scores. Each number after the p indicates the value of the parameter corresponding to the position. For instance \code{p1342} indicates that parameter P1 has value 1 (i.e. \code{"none"}), parameter P2 has value 3, i.e., \code{recode}, parameter P3 has value 4 (i.e., \code{"minid"}) and parameter P4 has value 2 (i.e. \code{"dist"}). This naming convention was adopted to allow to immediately and precisely know what has been done by reading the name of the score.}
 \item{...}{other columns in the form \code{pxxxx}.}
 }
+
 \references{
 Greenwald, A. G., Nosek, B. A., & Banaji, M. R. (2003). Understanding and using the Implicit Association Test: I. An improved scoring algorithm. Journal of Personality and Social Psychology, 85(2), 197-216. doi:10.1037/0022-3514.85.2.197 \cr \cr
 Nosek, B. A., Bar-Anan, Y., Sriram, N., & Greenwald, A. G. (2013). Understanding and Using the Brief Implicit Association Test: I. Recommended Scoring Procedures. SSRN Electronic Journal. doi:10.2139/ssrn.2196002 \cr \cr
@@ -92,4 +94,8 @@ Richetin, J., Costantini, G., Perugini, M., Schonbrodt, F. (2014). Should we sto
 }
 \author{
 Giulio Costantini
+}
+
+\seealso{
+\code{\link{SplitHalf}, \code{\link{alg2param}}
 }
