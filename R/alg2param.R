@@ -6,7 +6,7 @@ alg2param <- function(x)
   # the four parameters, the order of the arguments is important and must be
   # the same as in the help file of RobustScore and in documentation
   P1 <- c("none", "fxtrim", "fxwins", "trim10", "wins10", "inve10")
-  P2 <- c("ignore", "exclude", "recode", "separate")
+  P2 <- c("ignore", "exclude", "recode", "separate", "recode600")
   P3 <- c("dscore", "gscore", "wpr90", "minid", "minid_t10", "minid_w10",
           "minid_i10")
   P4 <- c("nodist", "dist")
