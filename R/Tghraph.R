@@ -1,6 +1,6 @@
-Tgraph <- function(mctp, alpha = .05)
+Tgraph <- function(mcmp, alpha = .05, horizorder = NULL)
 {
-  x <- mctp$Analysis
+  x <- mcmp$Analysis
   # from and to
   nd <- row.names(x)
   nd <- sapply(nd, str_split, pattern = "-")
@@ -33,6 +33,27 @@ Tgraph <- function(mctp, alpha = .05)
   if(length(lev) > 1)
     layout <- lev2layout(lev)
   wmat[amat == 0] <- 0
+  
+  if(!is.null(horizorder))
+  {
+    # if a preferred horizontal order is specified, it is applied
+    # 1. establish a vertical order
+    layout <- data.frame(layout)
+    names(layout) <- c("x", "y")
+    layout[, "names"] <- rownames(amat)
+    # 2. within levels of the vertical order, reorder the rows
+    for(i in unique(layout$y))
+    {
+      xs <- unique(layout[layout$y == i, "x"])
+      nds <- unique(layout[layout$y == i, "names"])
+      nds2 <- match(horizorder, nds)
+      nds2 <- nds2[!is.na(nds2)]
+      newxs <- xs[nds2]
+      layout[layout$y == i, "x"] <- newxs
+    }
+    layout <- as.matrix(layout[,c("x", "y")])
+  }
+  
   list("wmat" = wmat, "amat" = amat, "layout" = layout)
 }
 
@@ -87,8 +108,6 @@ hlevels <- function(amat)
 lev2layout <- function(lev)
 {
   # creates a qgraph layout from a series of levels.
-  
-  
   layout <- matrix(0, ncol = 2, nrow = length(unlist(lev)))
   stepy <- 2/(length(lev)-1)
   ys <- seq(from = 1, to = -1, by = -stepy)

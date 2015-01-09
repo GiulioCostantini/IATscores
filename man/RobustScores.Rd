@@ -97,5 +97,5 @@ Giulio Costantini
 }
 
 \seealso{
-\code{\link{SplitHalf}, \code{\link{alg2param}}
+\code{\link{SplitHalf}}, \code{\link{alg2param}}
 }

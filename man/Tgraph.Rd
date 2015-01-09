@@ -8,19 +8,20 @@ Layout \code{\link{qgraph}} for multiple comparisons by package \code{nparcomp}
 Implements the T-graph layout proposed by Vasilescu et al. (2014), using the robust nonparametric contrasts proposed by Konietschke et al. (2012).
 }
 \usage{
-Tgraph(mctp, alpha = 0.05)
+Tgraph(mcmp, alpha = 0.05, horizorder = NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{mctp}{
-The output of a robust post-hoc, as obtained with function \code{mctp} from package  \code{nparcomp}}
-  \item{alpha}{The alpha level, by convention = .05. Effects with p.values lower than \code{alpha} are represented as arrows in the network layout.
-}
+  \item{mcmp}{
+The output of a robust post-hoc, as obtained with function \code{mcmp} from package  \code{nparcomp}}
+  \item{alpha}{The alpha level, by convention = .05. Effects with p.values lower than \code{alpha} are represented as arrows in the network layout.}
+  \item{horizorder}{Optional, vector of strings. While the vertical order of the variables in the Tgraph is determined by the multiple comparisons, the horizontal ordering is not. If specified, parameter horizorder allows to determine the horizontal order. It must be a vector with the names of the variables in the preferred horizontal order.}
+
 }
 \details{
 A T-graph is a simple graphical representation of a series of pairwise comparison proposed by Vasilescu et al. (2014). The nodes of the graph represent the levels of the factor, the arrows represent their pairwise comparisons. An arrow points from one option to another if the dependent variable is significantly higher for the first level compared to the second level of the factor. The robust contrasts defined by Konietschke et al. (2012) have the transitive property, therefore if an option X outperforms another option Y and Y outperforms Z, this implies that X outperforms Z. For sake of a clear graphical representation we followed Vasilescu et al. and omitted the direct edges when two nodes could be connected using an indirect path travelling through other nodes.}
 \value{
-\item{wmat}{The weights matrix, for each pair of options the weights represent the value of the estimated relative effect, see \code{mctp}. A value is present in \code{wmat} only if the associated p.value is less than \code{alpha} and it is zero otherwise.}
+\item{wmat}{The weights matrix, for each pair of options the weights represent the value of the estimated relative effect, see \code{mcmp}. A value is present in \code{wmat} only if the associated p.value is less than \code{alpha} and it is zero otherwise.}
 \item{amat}{The adjacency matrix, for each pari of options, it has value 1 if an edge is present in \code{wmat} and 0 otherwise. This should be given as the main \code{input} to \code{link{qgraph}}}
 \item{layout}{The layout to give in input to qgraph's parameter \code{layout}}
 
@@ -49,9 +50,12 @@ dat$IV <- c(rep("A", 100),
         rep("B", 100),
         rep("D", 100))
 
-mctp <- mctp(formula = DV~IV, data = dat, type = "Tukey")
-tg <- Tgraph(mctp)
-qgraph(tg$amat, layout = tg$layout)  }
+mcmp <- mctp(formula = DV~IV, data = dat, type = "Tukey")
+tg <- Tgraph(mcmp)
+qgraph(tg$amat, layout = tg$layout)
+
+tg2 <- Tgraph(mcmp,  horizorder = c("A", "D", "B"))
+qgraph(tg2$amat, layout = tg2$layout)  }
 
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
