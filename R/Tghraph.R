@@ -46,7 +46,7 @@ Tgraph <- function(mcmp, alpha = .05, horizorder = NULL)
     {
       xs <- unique(layout[layout$y == i, "x"])
       nds <- unique(layout[layout$y == i, "names"])
-      nds2 <- match(horizorder, nds)
+      nds2 <- match(nds, horizorder)
       nds2 <- nds2[!is.na(nds2)]
       newxs <- xs[nds2]
       layout[layout$y == i, "x"] <- newxs
