@@ -41,7 +41,7 @@ doP1P2P3P4 <- function(IATdata,
     dist_l <- rbind(dist_prac, dist_crit)
     dist <- data.frame("subject" = unique(IATdata$subject))
     
-    for(i in names(dist_l)[names(dist_l) != c("subject", "praccrit")])
+    for(i in names(dist_l)[!names(dist_l) %in% c("subject", "praccrit")])
     {
       dist_w <- dcast(dist_l, subject ~ praccrit, value.var = i)
       dist_w <- mutate(dist_w, dscore = (prac+crit)/ 2) %>%
