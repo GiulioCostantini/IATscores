@@ -2,6 +2,7 @@ export(alg2param, Pretreatment, RobustScores, SplitHalf, TestRetest, Tgraph)
 importFrom("dplyr","%>%","group_by", "summarize", "left_join", "mutate",
            "inner_join", "select", "rbind_list", "arrange")
 importFrom("reshape2","dcast", "melt")
-importFrom("stringr", "str_replace", "str_split", "str_trim", "str_sub")
+importFrom("stringr", "str_replace", "str_split", "str_trim", "str_sub",
+           "str_join")
 importFrom("qgraph", "getWmat")
 importFrom("nem", "transitive.reduction")
