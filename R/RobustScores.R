@@ -64,7 +64,7 @@ RobustScores <- function(IATdata,
             specified in the input IATdata.', immediate. = TRUE)
     IATdata$praccrit <- NA
   }
-  
+    
   # SELECT COLUMNS
   # drop any irrelevant (and potentially dangerous) column ...
   IATdata <- select(IATdata, subject, latency, correct, blockcode, praccrit) 
@@ -87,7 +87,7 @@ RobustScores <- function(IATdata,
     warning(paste("The following subjects have been removed because they
             have too few correct responses to compute IAT scores, i.e.,
             less than", mincor, "correct responses with latency less than",
-                  k10, "ms"), immediate. = TRUE)
+                  k10, "ms and more than", lofxtrim, "ms"), immediate. = TRUE)
     cat("Subjects =", unique(ncor$subject))
   }
   
