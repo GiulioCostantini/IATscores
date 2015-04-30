@@ -1,7 +1,8 @@
 doP1P2 <- function(IATdata,
                    P1 = c("none", "fxtrim", "fxwins", "trim10", "wins10",
                           "inve10"),
-                   P2 = c("ignore", "exclude", "recode", "separate"),
+                   P2 = c("ignore", "exclude", "recode", "separate",
+                          "recode600"),
                    verbose = TRUE)
 {
   if(verbose) print(paste0(Sys.time(), ": Applying parameters P1 and P2"))
