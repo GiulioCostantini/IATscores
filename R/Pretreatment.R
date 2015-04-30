@@ -62,13 +62,13 @@ Pretreatment <- function(IATdata,
   
   # optional: do you want to keep the stimuli column?
   if(stimuli)
-    IAT3$stimulus <- droplevels(as.factor(IAT2[,label_stimulus]))
+    IAT2$stimulus <- str_trim(IAT1[,label_stimulus])
  
   # clean the NA rows, if any
   IAT2 <- remove.na.rows(IAT2)
   
   # values that are not allowed are removed
   # e.g., (negative latencies, correct != 0 or 1)
-  IAT2 <- IAT2 [IAT2$latency>=0 & IAT2$correct %in% c(0,1), ]
+  IAT2 <- IAT2 [IAT2$latency >= 0 & IAT2$correct %in% c(0,1), ]
   IAT2
 }
