@@ -89,8 +89,7 @@ The procedure for computing the scores is the following.
 \references{
 Greenwald, A. G., Nosek, B. A., & Banaji, M. R. (2003). Understanding and using the Implicit Association Test: I. An improved scoring algorithm. Journal of Personality and Social Psychology, 85(2), 197-216. doi:10.1037/0022-3514.85.2.197 \cr \cr
 Nosek, B. A., Bar-Anan, Y., Sriram, N., & Greenwald, A. G. (2013). Understanding and Using the Brief Implicit Association Test: I. Recommended Scoring Procedures. SSRN Electronic Journal. doi:10.2139/ssrn.2196002 \cr \cr
-Richetin, J., Costantini, G., Perugini, M., Schonbrodt, F. (2014). Should we stop looking for a more valid IAT score? Alternatives to the standard D scores and recommendations. Manuscript in preparation.
-
+Richetin, J., Costantini, G., Perugini, M., Schonbrodt, F. (in press). Should we stop looking for a better scoring algorithm for handling Implicit Association Test data? Test of the role of errors, extreme latencies treatment, scoring formula, and practice trials on reliability and validity. PLOS ONE.
 }
 \author{
 Giulio Costantini

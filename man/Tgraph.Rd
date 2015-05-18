@@ -32,6 +32,8 @@ Epskamp, S., Cramer, A. O. J., Waldorp, L. J., Schmittmann, V. D., & Borsboom, D
 Konietschke, F., Hothorn, L. a., & Brunner, E. (2012). Rank-based multiple test procedures and simultaneous confidence intervals. Electronic Journal of Statistics, 6, 738-759. doi:10.1214/12-EJS691
 
 Vasilescu, B., Serebrenik, A., Goeminne, M., & Mens, T. (2014). On the variation and specialisation of workload-A case study of the Gnome ecosystem community. Empirical Software Engineering, 19, 955-1008. doi:10.1007/s10664-013-9244-1
+
+Richetin, J., Costantini, G., Perugini, M., Schonbrodt, F. (in press). Should we stop looking for a better scoring algorithm for handling Implicit Association Test data? Test of the role of errors, extreme latencies treatment, scoring formula, and practice trials on reliability and validity. PLOS ONE.
 }
 \author{
 Giulio Costantini}
