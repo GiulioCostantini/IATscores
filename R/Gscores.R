@@ -1,5 +1,7 @@
 Gscores <- function(IATlong)
 {
+  # just to prevent notes from R CMD check
+    variable <- subject <- RT <- blockcode <- Gr <- pair2 <- pair1 <- NULL
   # Comments in "quotes" from Nosek, Bar-Anan, Sriram, Greenwald (2013),
   # "Understanding and using the brief implicit association test: I.
   # recommended scoring procedures". Table 9. http://ssrn.com/abstract=2196002

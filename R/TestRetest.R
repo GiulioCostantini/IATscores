@@ -1,5 +1,7 @@
 TestRetest <- function(IATdata, ...)
 {
+  # just to prevent notes from R CMD check
+  session <- subject <- NULL
   
   sess <- unique(IATdata$session)
   test <- RobustScores(IATdata = filter(IATdata, session == sess[1]), ...)

@@ -1,5 +1,9 @@
 Dscores <- function(IATlong)
 {
+  # just to prevent notes from R CMD check
+  subject <- variable <- blockcode <- RT <- pair2 <- pair1 <- SD <- NULL
+  
+  
   # Function to compute the Dscores from data in (a certain) long format
   
   # Compute the Means on all the variants of treated RTs

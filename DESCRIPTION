@@ -1,10 +1,10 @@
 Package: IATscores
 Title: Implicit Association Test Scores Using Robust Statistics
-Description: Compute several variations of the IAT scores, including the D-scores (Greenwald, Banaji, Nosek, 2003) and the new scores using robust statistics (Richetin, Costantini, Perugini, and Schonbrodt, 2015)
+Description: Compute several variations of the Implicit Association Test (IAT) scores, including the D scores (Greenwald, Nosek, Banaji, 2003) and the new scores using robust statistics (Richetin, Costantini, Perugini, and Schonbrodt, 2015).
 Author: Giulio Costantini
 Maintainer: Giulio Costantini <costantinigiulio@gmail.com>
 Date: 2015-05-18
-Version: 0.1-0
+Version: 0.1-1
 Type: Package
 Depends: R (>= 3.2.0)
 Imports: stringr (>= 0.6.2), dplyr (>= 0.2), reshape2 (>= 1.4), nem (>= 2.38.0), qgraph (>= 1.2.5)

@@ -8,6 +8,9 @@ RobustScores <- function(IATdata,
                          P4 = c("nodist", "dist"),
                          maxMemory = 1000, verbose = TRUE)
 {
+  # just to prevent notes from R CMD check
+  subject <- latency <- correct <- blockcode <- praccrit <- NULL
+  
   mincor <- 3 # minimum number of correct responses with lat < k10
   # required to be included int he analyses
   
