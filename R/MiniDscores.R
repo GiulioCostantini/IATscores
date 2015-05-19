@@ -2,8 +2,6 @@ MiniDscores <- function(IATlong, P3 = c("minid", "minid_t10",
                                         "minid_w10", "minid_i10"),
                         maxMemory = 1000)
 {
-  # just to prevent notes from R CMD check
-  variable <- blockcode <- subject <- RT <- pair1 <- pair2 <- n <- n1 <- n2 <- NULL 
   # Compute all the mini differences between any latency in pair2 and
   # any latency in pair 1. Several kind of scores are then computed by function
   # computeMinid.
@@ -72,9 +70,6 @@ MiniDscores <- function(IATlong, P3 = c("minid", "minid_t10",
 
 computeMinid <- function(IL3, P3)
 {
-  # just to prevent notes from R CMD check
-  subject <- variable <- minid <- NULL
-  
   # The output variable that will include all the minid scores
   Score_m <- data.frame("subject" = unique(IL3$subject))
   

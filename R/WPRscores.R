@@ -1,8 +1,5 @@
 WPRscores <- function(IATlong)
 {
-  # just to prevent notes from R CMD check
-  subject <- variable <- blockcode <- RT <- pair2 <- pair1 <- SD <- NULL
-  
   qnt <- .9 # the quantile for the WPR score
   
   # Compute the Quantiles on all the variants of treated RTs

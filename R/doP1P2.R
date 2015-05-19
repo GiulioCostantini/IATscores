@@ -5,9 +5,6 @@ doP1P2 <- function(IATdata,
                           "recode600"),
                    verbose = TRUE)
 {
-  # just to prevent notes from R CMD check
-  latency <- pxxxx <- subject <- correct <- index <- blockcode <- NULL
-  
   if(verbose) print(paste0(Sys.time(), ": Applying parameters P1 and P2"))
   
   # Apply parameters 1 and 2 and return new columns in the dataframe

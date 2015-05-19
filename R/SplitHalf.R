@@ -1,7 +1,5 @@
 SplitHalf <- function(IATdata, ...)
 {
-  # just to prevent notes from R CMD check
-  subject <- NULL
   
   # Split the data in two halves
   evenrows <- rep(c(FALSE, FALSE, TRUE, TRUE), length.out = nrow(IATdata))

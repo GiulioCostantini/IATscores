@@ -7,9 +7,6 @@ doP1P2P3P4 <- function(IATdata,
                        P4 = c("nodist", "dist"),
                        maxMemory = 1000, verbose = TRUE)
 {
-  # just to prevent notes from R CMD check
-  praccrit <- prac <- crit <- NULL
-  
   Scores <- data.frame("subject" = unique(IATdata$subject))
   
   # nodist in P4: do not distinguish practice and critical blocks
