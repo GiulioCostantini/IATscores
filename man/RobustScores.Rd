@@ -2,7 +2,7 @@
 \alias{RobustScores}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Compute the Robust IAT scoers
+Compute the Robust IAT scores
 }
 \description{
 This is the main function of the package. It allows to compute many variants of the robust IAT scores all with a single command.
