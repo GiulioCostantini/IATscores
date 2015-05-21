@@ -89,7 +89,7 @@ RobustScores <- function(IATdata,
             have too few correct responses to compute IAT scores, i.e.,
             less than", mincor, "correct responses with latency less than",
                   k10, "ms and more than", lofxtrim, "ms in at least one block:
-                  Subjects =", str_join(ncor$subject, collapse = ", ")),
+                  Subjects =", str_c(ncor$subject, collapse = ", ")),
             immediate. = TRUE)
   }
   
