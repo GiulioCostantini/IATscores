@@ -46,7 +46,7 @@ doP1P2P3P4 <- function(IATdata,
       dist_w <- dcast(dist_l, subject ~ praccrit, value.var = i)
       dist_w <- mutate(dist_w, dscore = (prac+crit)/ 2) %>%
         select(-crit, -prac)
-      names(dist_w) <- c("subject", str_replace(i, "x", 2))
+      names(dist_w) <- c("subject", str_replace(i, "x", "2"))
       dist <- left_join(dist, dist_w, by = "subject") 
     }
     
