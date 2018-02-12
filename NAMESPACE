@@ -1,11 +1,10 @@
 export(alg2param, Pretreatment, RobustScores, SplitHalf, TestRetest, Tgraph)
 importFrom("dplyr","%>%","group_by", "summarize", "left_join", "mutate",
-           "inner_join", "select", "rbind_list", "arrange", "filter")
+           "inner_join", "select", "bind_rows", "arrange", "filter")
 importFrom("stringr", "str_c", "str_replace", "str_split", "str_trim",
-           "str_sub", "str_join")
+           "str_sub")
 importFrom("reshape2","dcast", "melt")
 importFrom("qgraph", "getWmat")
 importFrom("stats", "sd", "var", "cor", "quantile")
 importFrom("utils", "object.size")
-importFrom("stringr")
 importFrom("methods", "as")

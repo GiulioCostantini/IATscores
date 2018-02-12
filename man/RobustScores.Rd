@@ -14,7 +14,8 @@ P2 = c("ignore", "exclude", "recode", "separate", "recode600"),
 P3 = c("dscore", "gscore", "wpr90", "minid", "minid_t10", "minid_w10",
 "minid_i10"),
 P4 = c("nodist", "dist"), maxMemory = 1000,
-verbose = TRUE)
+verbose = TRUE,
+autoremove = TRUE)
 }
 
 \arguments{
@@ -68,6 +69,8 @@ a dataframe with the following columns:
 In computing the minidifferences, a very large dataframe is required. \code{maxMemory} specifies the maximum size of this dataframe, in MB. This limit is respected by "slicing" the dataset and computing the scores separately for many subsets of participants. This can slow the computation a bit, but prevents RAM overflows.
 }
   \item{verbose}{if \code{TRUE}, Print the time at which several operations are performed.
+}
+\item{autoremove}{if \code{TRUE} (the default), participants with less than 3 correct responses with latency between 400ms and 10s in each block are excluded from the analyses. Disabling this option can result in computing some variants of IAT scores on too few trials and it can lead to errors and missing values. Change this parameter to \code{FALSE} only if you know what you are doing.
 }
 
 }
