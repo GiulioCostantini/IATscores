@@ -4,23 +4,17 @@ output: github_document
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r, echo = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "README-"
-)
-```
-
 # IATscores
 
-A package to compute several types of scores for the Implicit Association Test, including the D scores (Greenwald, Nosek, Banaji, 2003) and the new scores that were developed using robust statistics (Richetin, Costantini, Perugini, and Schonbrodt, 2015, https://doi.org/10.1371/journal.pone.0129601). 
+A package to compute several types of scores for the Implicit Association Test, including the D scores (Greenwald, Nosek, Banaji, 2003) and the new scores that were developed using robust statistics (Richetin, Costantini, Perugini, and Schonbrodt, 2015). 
+
+For more information, please see the publication in PLoS one
+https://doi.org/10.1371/journal.pone.0129601
 
 ## Installation
 
 You can install IATscores from CRAN with:
 ```{r gh-installation, eval = FALSE}
-# install.packages("devtools")
 install.packages("IATscores")
 ```
 
@@ -31,4 +25,4 @@ You can install IATscores from github with:
 devtools::install_github("GiulioCostantini/IATscores")
 ```
 
-If you experience problems, try installing the github version. I fix bugs in github before submitting the updates to CRAN.
+If you experience problems, try installing the github version. I fix bugs in github before submitting the updates to CRAN. The CRAN version however can sometimes be more stable.
