@@ -1,4 +1,10 @@
-export(alg2param, Pretreatment, RobustScores, SplitHalf, TestRetest, Tgraph)
+export(alg2param, Pretreatment, RobustScores, SplitHalf, TestRetest, Tgraph,
+       D2, D5, D6,
+       D2SWND, D5SWND, D6SWND,
+       SplitHalf.D2, SplitHalf.D5, SplitHalf.D6,
+       SplitHalf.D2SWND, SplitHalf.D5SWND, SplitHalf.D6SWND,
+       TestRetest.D2, TestRetest.D5, TestRetest.D6,
+       TestRetest.D2SWND, TestRetest.D5SWND, TestRetest.D6SWND)
 importFrom("dplyr","%>%","group_by", "summarize", "left_join", "mutate",
            "inner_join", "select", "bind_rows", "arrange", "filter")
 importFrom("stringr", "str_c", "str_replace", "str_split", "str_trim",

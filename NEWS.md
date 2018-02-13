@@ -1,3 +1,9 @@
+# IAT scores 0.2.1
+
+* Added several new functions, to easily implement the most common D scores
+
+* Improved help files with examples
+
 # IATscores 0.2.0
 
 * Excluding participants with too few responses is now optional, implemented in option autoremove

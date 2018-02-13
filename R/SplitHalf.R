@@ -1,6 +1,5 @@
 SplitHalf <- function(IATdata, ...)
 {
-  
   # Split the data in two halves
   evenrows <- rep(c(FALSE, FALSE, TRUE, TRUE), length.out = nrow(IATdata))
   oddrows <- !evenrows
@@ -31,3 +30,50 @@ SplitHalf <- function(IATdata, ...)
   
   splithalf
 }
+
+
+# D2 scores
+SplitHalf.D2 <- function(IATdata, ...) SplitHalf(IATdata,
+                                         P1 = "fxtrim",
+                                         P2 = "ignore",
+                                         P3 = "dscore",
+                                         P4 = "dist", ...)
+
+# D5 scores
+SplitHalf.D5 <- function(IATdata, ...) SplitHalf(IATdata,
+                                         P1 = "fxtrim",
+                                         P2 = "recode",
+                                         P3 = "dscore",
+                                         P4 = "dist", ...)
+
+# D6 scores
+SplitHalf.D6 <- function(IATdata, ...) SplitHalf(IATdata,
+                                         P1 = "fxtrim",
+                                         P2 = "recode600",
+                                         P3 = "dscore",
+                                         P4 = "dist", ...)
+
+
+# D2SWND scores
+SplitHalf.D2SWND <- function(IATdata, ...) SplitHalf(IATdata,
+                                             P1 = "wins10",
+                                             P2 = "ignore",
+                                             P3 = "dscore",
+                                             P4 = "nodist", ...)
+
+# D5SWND scores
+SplitHalf.D5SWND <- function(IATdata, ...) SplitHalf(IATdata,
+                                             P1 = "wins10",
+                                             P2 = "recode",
+                                             P3 = "dscore",
+                                             P4 = "nodist", ...)
+
+# D6SWND scores
+SplitHalf.D6SWND <- function(IATdata,...) SplitHalf(IATdata,
+                                             P1 = "wins10",
+                                             P2 = "recode600",
+                                             P3 = "dscore",
+                                             P4 = "nodist", ...)
+
+
+

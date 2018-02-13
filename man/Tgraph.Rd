@@ -57,7 +57,8 @@ tg <- Tgraph(mcmp)
 qgraph(tg$amat, layout = tg$layout)
 
 tg2 <- Tgraph(mcmp,  horizorder = c("A", "D", "B"))
-qgraph(tg2$amat, layout = tg2$layout)  }
+qgraph(tg2$amat, layout = tg2$layout)
+}
 
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

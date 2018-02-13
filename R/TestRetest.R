@@ -20,10 +20,57 @@ TestRetest <- function(IATdata, ...)
     splitcor <- cor(select(splitdata, -subject),
                     use = "pairwise.complete.obs")[1,2]
     
-    # spearman-brown prophetic formula
     testretest[i, "testretest"] <- splitcor
     testretest[i, "algorithm"] <- algos[i]
   }
  
   testretest
 }
+
+
+
+# D2 scores
+TestRetest.D2 <- function(IATdata, ...) TestRetest(IATdata,
+                                                 P1 = "fxtrim",
+                                                 P2 = "ignore",
+                                                 P3 = "dscore",
+                                                 P4 = "dist", ...)
+
+# D5 scores
+TestRetest.D5 <- function(IATdata, ...) TestRetest(IATdata,
+                                                 P1 = "fxtrim",
+                                                 P2 = "recode",
+                                                 P3 = "dscore",
+                                                 P4 = "dist", ...)
+
+# D6 scores
+TestRetest.D6 <- function(IATdata, ...) TestRetest(IATdata,
+                                                 P1 = "fxtrim",
+                                                 P2 = "recode600",
+                                                 P3 = "dscore",
+                                                 P4 = "dist", ...)
+
+
+# D2SWND scores
+TestRetest.D2SWND <- function(IATdata, ...) TestRetest(IATdata,
+                                                     P1 = "wins10",
+                                                     P2 = "ignore",
+                                                     P3 = "dscore",
+                                                     P4 = "nodist", ...)
+
+# D5SWND scores
+TestRetest.D5SWND <- function(IATdata, ...) TestRetest(IATdata,
+                                                     P1 = "wins10",
+                                                     P2 = "recode",
+                                                     P3 = "dscore",
+                                                     P4 = "nodist", ...)
+
+# D6SWND scores
+TestRetest.D6SWND <- function(IATdata,...) TestRetest(IATdata,
+                                                    P1 = "wins10",
+                                                    P2 = "recode600",
+                                                    P3 = "dscore",
+                                                    P4 = "nodist", ...)
+
+
+

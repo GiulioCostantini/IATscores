@@ -101,3 +101,49 @@ RobustScores <- function(IATdata,
   if(verbose) print(paste0(Sys.time(), ": IAT scores have been computed"))
   Scores
 }
+
+
+
+# D2 scores
+D2 <- function(IATdata,...) RobustScores(IATdata,
+             P1 = "fxtrim",
+             P2 = "ignore",
+             P3 = "dscore",
+             P4 = "dist", ...)
+
+# D5 scores
+D5 <- function(IATdata,...) RobustScores(IATdata,
+                                         P1 = "fxtrim",
+                                         P2 = "recode",
+                                         P3 = "dscore",
+                                         P4 = "dist", ...)
+
+# D6 scores
+D6 <- function(IATdata,...) RobustScores(IATdata,
+                                         P1 = "fxtrim",
+                                         P2 = "recode600",
+                                         P3 = "dscore",
+                                         P4 = "dist", ...)
+
+
+# D2SWND scores
+D2SWND <- function(IATdata,...) RobustScores(IATdata,
+                                         P1 = "wins10",
+                                         P2 = "ignore",
+                                         P3 = "dscore",
+                                         P4 = "nodist", ...)
+
+# D5SWND scores
+D5SWND <- function(IATdata,...) RobustScores(IATdata,
+                                         P1 = "wins10",
+                                         P2 = "recode",
+                                         P3 = "dscore",
+                                         P4 = "nodist", ...)
+
+# D6SWND scores
+D6SWND <- function(IATdata,...) RobustScores(IATdata,
+                                         P1 = "wins10",
+                                         P2 = "recode600",
+                                         P3 = "dscore",
+                                         P4 = "nodist", ...)
+

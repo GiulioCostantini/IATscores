@@ -4,7 +4,7 @@ Description: Compute several variations of the Implicit Association Test (IAT) s
 Author: Giulio Costantini
 Maintainer: Giulio Costantini <costantinigiulio@gmail.com>
 Date: 2018-02-12
-Version: 0.2.0
+Version: 0.2.1
 Type: Package
 Depends: R (>= 3.4.0)
 Imports: stringr (>= 1.2.0), dplyr (>= 0.7.2), reshape2 (>= 1.4.2), qgraph (>= 1.4.4), methods (>= 3.4.1)
