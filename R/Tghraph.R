@@ -1,6 +1,7 @@
 Tgraph <- function(mcmp, alpha = .05, horizorder = NULL)
 {
   x <- mcmp$Analysis
+  
   # from and to
   nd <- row.names(x)
   nd <- sapply(nd, str_split, pattern = "-")
@@ -9,7 +10,7 @@ Tgraph <- function(mcmp, alpha = .05, horizorder = NULL)
   edgelist <- data.frame(cbind(from, to, x))
   edgelist$from <- as.character(edgelist$from)
   edgelist$to <- as.character(edgelist$to)
-  
+
   # keep only significant edeges
   edgelist <- edgelist[edgelist$p.Value < alpha,]
   
@@ -38,6 +39,9 @@ Tgraph <- function(mcmp, alpha = .05, horizorder = NULL)
   {
     # if a preferred horizontal order is specified, it is applied
     # 1. establish a vertical order
+    vrbl <- as.character(mcmp$Data.Info$Sample)
+    horizorder <- match(vrbl, horizorder)
+    
     layout <- data.frame(layout)
     names(layout) <- c("x", "y")
     layout[, "names"] <- rownames(amat)

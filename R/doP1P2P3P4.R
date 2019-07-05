@@ -7,6 +7,8 @@ doP1P2P3P4 <- function(IATdata,
                        P4 = c("nodist", "dist"),
                        maxMemory = 1000, verbose = TRUE)
 {
+  select <- dplyr::select
+  filter <- dplyr::filter
   Scores <- data.frame("subject" = unique(IATdata$subject))
   
   # nodist in P4: do not distinguish practice and critical blocks

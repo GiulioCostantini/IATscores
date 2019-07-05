@@ -10,6 +10,9 @@ MiniDscores <- function(IATlong, P3 = c("minid", "minid_t10",
   # dataframe which includes all the mini differences.
   # Some effort has been made to avoid RAM overflow.
   
+  select <- dplyr::select
+  filter <- dplyr::filter
+  
   IATlong <- filter(IATlong, variable != "pxxxx")
   
   # Create two dataframes, IL1 and IL2. IL1 includes the data from block

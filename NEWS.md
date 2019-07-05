@@ -1,3 +1,12 @@
+# IAT scores 0.2.3
+
+* New function IATdescriptives, to compute descriptive statistics for each subect
+
+* Fixed bugs connected to Tgraph
+
+* specified function-package associations for dplyr
+
+
 # IAT scores 0.2.1
 
 * Added several new functions, to easily implement the most common D scores

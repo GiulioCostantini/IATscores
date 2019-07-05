@@ -13,8 +13,8 @@ scores according to four main parameters.
 \tabular{ll}{
 Package: \tab IATscores\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2014-07-31\cr
-License: \tab What license is it under?\cr
+Version: \tab 0.2.3\cr
+Date: \tab 2019-07-05\cr
+License: \tab GPL-2 \cr
 }
 }

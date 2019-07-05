@@ -9,7 +9,8 @@ RobustScores <- function(IATdata,
                          maxMemory = 1000, verbose = TRUE,
                          autoremove = TRUE)
 {
-   
+  select <- dplyr::select
+  filter <- dplyr::filter
   mincor <- 3 # minimum number of correct responses with lat < k10
   # required to be included int he analyses
   
