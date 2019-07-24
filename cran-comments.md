@@ -1,6 +1,7 @@
 ## Test environments
-* windows 10, R 3.6.1
-* macOS 10.14.5 R 3.6.1 
+* local windows 10, R 3.6.1
+* Windows Server 2008 R2 SP1 (R-hub builder)
+* Ubuntu Linux 16.04 LTS (R-hub builder)
 
 ## R CMD check results
 There were no ERRORs or WARNINGs. 
