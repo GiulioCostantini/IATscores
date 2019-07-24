@@ -68,7 +68,7 @@ a dataframe with the following columns:
   \item \code{"gscore"}. Compute the Gscores, as shown in Nosek, Bar-Anan, Sriram, & Greenwald (2013).
   \item \code{"wpr90"}. Compute the scores based on the worst-performance-rule, which are the same as the Dscores, but instead of the mean, the 90th percentile is used in the numerator.
   \item \code{minid}. Compute the minidifferences, i.e., the differences between any latency in pair2 and any latency in pair1. Then compute the IAT scores as the Mean of the minidifferences, divided by their SD.
-  \item \code{minid_t10}. Compute the 10\% trimmed minidifferences, which are identical to the mididiffernces, but instead of the mean, the 10\% trimmed mean is used.
+  \item \code{minid_t10}. Compute the 10\% trimmed minidifferences, which are identical to the minidiffernces, but instead of the mean, the 10\% trimmed mean is used.
   \item \code{"minid_w10"} Compute the 10\% winsorized minidifferences, which are as the minidifferences, but instead of the mean, the 10\% winsorized mean is used.
   \item \code{"minid_i10"} Compute the 10\% inverse_trimmed minidifferences, which are as the minidifferences, but instead of the mean, the 10\% inverse trimmed mean is used.
   }
@@ -100,7 +100,7 @@ The procedure for computing the scores is the following.
 \item Finally, for P4 = \code{"dist"}, the scores computed i the practice and critical blocks are averaged.
 }
 Functions \code{D2}, \code{D5}, and \code{D6} are simple wrappers around RobustScores that allow computing the D2, D5, and D6 scores shown in Greenwald et al. (2003).
-Similarly, \code{D2SWND}, \code{D5SWND}, and \code{D6SWND} allow computing the same D2, D5, and D6 scores with the imrpovements proposed by Richetin et al. (2015): use of statistical winsorizing (SW) and no distinction (ND) between practice and critical blocks.
+Similarly, \code{D2SWND}, \code{D5SWND}, and \code{D6SWND} allow computing the same D2, D5, and D6 scores with the improvements proposed by Richetin et al. (2015): use of statistical winsorizing (SW) and no distinction (ND) between practice and critical blocks.
 }
 
 \value{A dataframe with as many columns as subjects, and as many rows as the possible combinations of the parameters P1, P2, P3 and P4.
@@ -112,7 +112,7 @@ Similarly, \code{D2SWND}, \code{D5SWND}, and \code{D6SWND} allow computing the s
 \references{
 Greenwald, A. G., Nosek, B. A., & Banaji, M. R. (2003). Understanding and using the Implicit Association Test: I. An improved scoring algorithm. Journal of Personality and Social Psychology, 85(2), 197-216. doi:10.1037/0022-3514.85.2.197 \cr \cr
 Nosek, B. A., Bar-Anan, Y., Sriram, N., & Greenwald, A. G. (2013). Understanding and Using the Brief Implicit Association Test: I. Recommended Scoring Procedures. SSRN Electronic Journal. doi:10.2139/ssrn.2196002 \cr \cr
-Richetin, J., Costantini, G., Perugini, M., Schonbrodt, F. (in press). Should we stop looking for a better scoring algorithm for handling Implicit Association Test data? Test of the role of errors, extreme latencies treatment, scoring formula, and practice trials on reliability and validity. PLOS ONE.
+Richetin, J., Costantini, G., Perugini, M., Schonbrodt, F. (in press). Should we stop looking for a better scoring algorithm for handling Implicit Association Test data? Test of the role of errors, extreme latencies treatment, scoring formula, and practice trials on reliability and validity. PLoS ONE.
 }
 \author{
 Giulio Costantini

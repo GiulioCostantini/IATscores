@@ -26,7 +26,7 @@ TestRetest.D6SWND(IATdata, ...)
   \item{IATdata}{
 same as \code{\link{RobustScores}}, but with the additional column
 \code{"session"}. \code{session} distinguishes the trials of the first session
-and those of the second session. It is tipically numerical, having value \code{1}
+and those of the second session. It is typically numerical, having value \code{1}
 for the first session and \code{2} for the second.
 Functions TestRetest.D2 etc. are wrappers that allow computing reliability for some common types of scores. See \code{\link{RobustScores}}.
 }
@@ -34,7 +34,7 @@ Functions TestRetest.D2 etc. are wrappers that allow computing reliability for s
 }
 \details{
 It computes the scores for the test and for the retest using RobustScores, 
-the output is just the correlaiton among the scores in the two sessions.
+the output is just the correlation among the scores in the two sessions.
 }
 \value{
 \item{algorithm}{The name of the algorithm, see \code{\link{RobustScores}} for

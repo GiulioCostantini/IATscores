@@ -1,6 +1,6 @@
 # IAT scores 0.2.3
 
-* New function IATdescriptives, to compute descriptive statistics for each subect
+* New function IATdescriptives, to compute descriptive statistics for each subject
 
 * Fixed bugs connected to Tgraph
 

@@ -35,7 +35,7 @@ Pretreatment(IATdata,
   - a column with the original stimuli (optional)
   }
   \item{label_subject}{String. Name of the column in \code{IATdata} with the subject numbers}
-  \item{label_latency}{String. Name of the column in \code{IATdata} with the latecies}
+  \item{label_latency}{String. Name of the column in \code{IATdata} with the latencies}
   \item{label_accuracy}{String. Name of the column in \code{IATdata} with the accuracy}
   \item{label_block}{String. Name of the column in \code{IATdata} with the block names}
   \item{block_pair1}{Vector of strings. Elements of the column indicated in \code{label_block} that correspond the one of the critical blocks of the IAT}
