@@ -70,7 +70,7 @@ hlevels <- function(amat)
   # from the first layer. The thir layer recceives from the second and so on.
   
   # amat = directed matrix with hierarchical layout (e.g., DAG)
-  # after applying  nem::transitive.reduction(amat)
+  # after applying  transitive.reduction(amat)
   
   # remove nodes that do not send or receive arrows
   toremove <- colSums(amat) == 0 & rowSums(amat) == 0

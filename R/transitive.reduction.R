@@ -3,11 +3,11 @@
 # 
 transitive.reduction <- function (g) 
 {
-  if (!(class(g) %in% c("matrix", "graphNEL"))) 
-    stop("Input must be an adjacency matrix or graphNEL object")
-  if (class(g) == "graphNEL") {
-    g = as(g, "matrix")
-  }
+  # if (!(class(g) %in% c("matrix", "graphNEL"))) 
+  #   stop("Input must be an adjacency matrix or graphNEL object")
+  # if (class(g) == "graphNEL") {
+  #   g = as(g, "matrix")
+  # }
   g = transitive.closure(g, mat = TRUE)
   g = g - diag(diag(g))
   type = (g > 1) * 1 - (g < 0) * 1
@@ -29,9 +29,9 @@ transitive.reduction <- function (g)
 
 transitive.closure <- function (g, mat = FALSE, loops = TRUE) 
 {
-  if (!(class(g) %in% c("graphNEL", "matrix"))) 
-    stop("Input must be either graphNEL object or adjacency matrix")
-  g <- as(g, "matrix")
+  # if (!(class(g) %in% c("graphNEL", "matrix"))) 
+  #   stop("Input must be either graphNEL object or adjacency matrix")
+  # g <- as(g, "matrix")
   n <- ncol(g)
   matExpIterativ <- function(x, pow, y = x, z = x, i = 1) {
     while (i < pow) {
