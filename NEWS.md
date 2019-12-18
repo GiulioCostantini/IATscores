@@ -1,6 +1,6 @@
 # IAT scores 0.2.4
 
-* Changed Tgraph to comply with the new "class" definition (see https://developer.r-project.org/Blog/public/2019/11/09/when-you-think-class.-think-again/index.html)
+* Changed transitive.reduction.R to comply with the new "class" definition (see https://developer.r-project.org/Blog/public/2019/11/09/when-you-think-class.-think-again/index.html)
 
 # IAT scores 0.2.3
 
