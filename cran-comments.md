@@ -1,5 +1,5 @@
 ## Test environments
-* local windows 10, R 3.6.2
+* local windows 10, R 4.0.0
 * Windows Server 2008 R2 SP1 (R-hub builder)
 * Ubuntu Linux 16.04 LTS (R-hub builder)
 * Fedora Linux (R-hub builder)

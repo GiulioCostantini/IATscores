@@ -7,7 +7,7 @@ export(alg2param, Pretreatment, RobustScores, SplitHalf, TestRetest, Tgraph,
        TestRetest.D2SWND, TestRetest.D5SWND, TestRetest.D6SWND,
        IATdescriptives)
 importFrom("dplyr","%>%","group_by", "summarize", "left_join", "mutate",
-           "inner_join", "select", "bind_rows", "arrange", "filter")
+           "inner_join", "select", "bind_rows", "arrange", "filter", "n")
 importFrom("stringr", "str_c", "str_replace", "str_split", "str_trim",
            "str_sub")
 importFrom("reshape2","dcast", "melt")

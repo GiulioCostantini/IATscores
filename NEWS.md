@@ -1,3 +1,7 @@
+# IAT scores 0.2.5
+* Included dplyr::n in Namespace to cope with latest dplyr update
+
+
 # IAT scores 0.2.4
 
 * Changed transitive.reduction.R to comply with the new "class" definition (see https://developer.r-project.org/Blog/public/2019/11/09/when-you-think-class.-think-again/index.html)
