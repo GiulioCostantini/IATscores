@@ -1,3 +1,7 @@
+# IAT scores 0.2.7
+* Fixed github issues after merge
+
+
 # IAT scores 0.2.5
 * Included dplyr::n in Namespace to cope with latest dplyr update
 
