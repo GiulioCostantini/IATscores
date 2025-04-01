@@ -2,7 +2,7 @@
 \alias{Tgraph}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Layout \code{\link{qgraph}} for multiple comparisons by package \code{nparcomp}
+Layout \code{qgraph} for multiple comparisons by package \code{nparcomp}
 }
 \description{
 Implements the T-graph layout proposed by Vasilescu et al. (2014), using the robust nonparametric contrasts proposed by Konietschke et al. (2012).
@@ -39,6 +39,8 @@ Richetin, J., Costantini, G., Perugini, M., Schonbrodt, F. (in press). Should we
 Giulio Costantini}
 
 \examples{
+\dontrun{
+
 library(nparcomp)
 library(qgraph)
 
@@ -58,6 +60,7 @@ qgraph(tg$amat, layout = tg$layout)
 
 tg2 <- Tgraph(mcmp,  horizorder = c("A", "D", "B"))
 qgraph(tg2$amat, layout = tg2$layout)
+}
 }
 
 % Add one or more standard keywords, see file 'KEYWORDS' in the
